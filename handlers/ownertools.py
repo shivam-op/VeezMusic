@@ -14,6 +14,7 @@ from config import (
     HEROKU_APP_NAME,
     HEROKU_URL,
     OWNER_ID,
+    SUDO_USERS,
     U_BRANCH,
     UPSTREAM_REPO,
 )
