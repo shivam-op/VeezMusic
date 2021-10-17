@@ -50,8 +50,8 @@ async def botstats(_, message: Message):
 
 @Client.on_message(
     filters.private
-    & filters.command("broadcast")
-    & filters.user(OWNER_ID)
+    & filters.command("broadcastall")
+    & filters.user(OWNER_ID, SUDO_USERS)
     & filters.reply
 )
 async def broadcast_handler_open(_, m: Message):
@@ -282,7 +282,7 @@ async def restart(client: Client, message: Message, hap):
 
 
 # Set Heroku Var
-@Client.on_message(command("setvar") & filters.user(OWNER_ID))
+@Client.on_message(command("setvar") & filters.user(OWNER_ID,SUDO_USERS))
 @_check_heroku
 async def setvar(client: Client, message: Message, app_):
     msg = await message.reply_text(message, "`please wait...`")
